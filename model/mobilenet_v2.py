@@ -12,7 +12,6 @@ from config import config as cfg
 def l2_normalize(x):
     return tf.nn.l2_normalize(x, axis=2)
 
-
 def _conv_block(inputs, filters, kernel, strides):
     """Convolution Block
     This function defines a 2D convolution operation with BN and relu6.

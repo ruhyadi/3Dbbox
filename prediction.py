@@ -22,7 +22,7 @@ def predict(args):
     model.load_weights(args.w)
 
     # KITTI_train_gen = KITTILoader(subset='training')
-    dims_avg, _ =KITTILoader(subset='training').get_average_dimension()
+    dims_avg, _ = KITTILoader(subset='training').get_average_dimension()
 
     # list all the validation images
     if args.a == 'training':
@@ -103,8 +103,8 @@ def predict(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Arguments for prediction',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-d', '-dir', type=str, default='/media/user/新加卷/kitti_dateset/', help='File to predict')
-    parser.add_argument('-a', '-dataset', type=str, default='tracklet', help='training dataset or tracklet')
+    parser.add_argument('-d', '-dir', type=str, default='./data', help='File to predict')
+    parser.add_argument('-a', '-dataset', type=str, default='debug', help='training dataset or tracklet')
     parser.add_argument('-w', '-weight', type=str, default='3dbox_weights_mob.hdf5', help ='Load trained weights')
     args = parser.parse_args()
 
